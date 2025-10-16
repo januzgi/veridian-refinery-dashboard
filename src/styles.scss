@@ -1,1 +1,121 @@
-/* You can add global styles to this file, and also import other style files */
+// https://material.angular.dev/guide/theming
+@use '@angular/material' as mat;
+@include mat.core();
+
+:root {
+  --emerald: #5fba6f;
+  --castleton: #02604d;
+  --light-blue: #abd2d8;
+  --smoky-black: #0e0906;
+  --seasalt: #f8f7f9;
+}
+
+// 1. Define a custom palette from your colors
+// You can use a tool online to generate the different shades
+$veridian-primary-palette: mat.define-palette(
+  (
+    50: #e6f0ee,
+    100: #b3d9d3,
+    200: #80c1b7,
+    500: #02604d,
+    // --castleton color
+    700: #014336,
+    contrast: (
+      50: #000000,
+      100: #000000,
+      200: #000000,
+      500: #ffffff,
+      700: #ffffff,
+    ),
+  )
+);
+
+$veridian-accent-palette: mat.define-palette(
+  (
+    50: #eff8f1,
+    100: #d8efdd,
+    200: #bfe5c8,
+    500: #5fba6f,
+    // --emerald color
+    700: #4a9e5a,
+    contrast: (
+      50: #000000,
+      100: #000000,
+      200: #000000,
+      500: #000000,
+      700: #ffffff,
+    ),
+  )
+);
+
+html {
+  @include mat.theme(
+    (
+      color: (
+        primary: $veridian-primary-palette,
+        tertiary: $veridian-accent-palette,
+      ),
+      typography: Roboto,
+      density: 0,
+    )
+  );
+}
+
+body {
+  // These variables are now generated from your custom theme!
+  background-color: var(--mat-sys-surface);
+  color: var(--mat-sys-on-surface);
+
+  // The font can be set by the theme, but a specific family is fine too.
+  font-family: Roboto, 'Helvetica Neue', sans-serif;
+  margin: 0;
+
+  // You can keep these for better font rendering
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color-scheme: light;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+h1 {
+  font-size: 3.125rem;
+  color: var(--gray-900);
+  font-weight: 500;
+  line-height: 100%;
+  letter-spacing: -0.125rem;
+  margin: 0;
+}
+
+p {
+  margin: 0;
+  color: var(--gray-700);
+}
+
+.main {
+  width: 100%;
+  min-height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+  box-sizing: inherit;
+  position: relative;
+}
+
+.app-container {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  max-width: 700px;
+  margin-bottom: 3rem;
+
+  @media screen and (max-width: 650px) {
+    flex-direction: column;
+    width: max-content;
+  }
+}
