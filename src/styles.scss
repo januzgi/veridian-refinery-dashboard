@@ -1,76 +1,16 @@
-// https://material.angular.dev/guide/theming
-@use '@angular/material' as mat;
-@include mat.core();
-
-:root {
-  --emerald: #5fba6f;
-  --castleton: #02604d;
-  --light-blue: #abd2d8;
-  --smoky-black: #0e0906;
-  --seasalt: #f8f7f9;
-}
-
-// 1. Define a custom palette from your colors
-// You can use a tool online to generate the different shades
-$veridian-primary-palette: mat.define-palette(
-  (
-    50: #e6f0ee,
-    100: #b3d9d3,
-    200: #80c1b7,
-    500: #02604d,
-    // --castleton color
-    700: #014336,
-    contrast: (
-      50: #000000,
-      100: #000000,
-      200: #000000,
-      500: #ffffff,
-      700: #ffffff,
-    ),
-  )
-);
-
-$veridian-accent-palette: mat.define-palette(
-  (
-    50: #eff8f1,
-    100: #d8efdd,
-    200: #bfe5c8,
-    500: #5fba6f,
-    // --emerald color
-    700: #4a9e5a,
-    contrast: (
-      50: #000000,
-      100: #000000,
-      200: #000000,
-      500: #000000,
-      700: #ffffff,
-    ),
-  )
-);
-
-html {
-  @include mat.theme(
-    (
-      color: (
-        primary: $veridian-primary-palette,
-        tertiary: $veridian-accent-palette,
-      ),
-      typography: Roboto,
-      density: 0,
-    )
-  );
-}
+// :root {
+//   --emerald: #5fba6f;
+//   --smoky-black: #0e0906;
+//   --castleton: #02604d;
+//   --light-blue: #abd2d8;
+//   --seasalt: #f8f7f9;
+// }
 
 body {
-  // These variables are now generated from your custom theme!
-  background-color: var(--mat-sys-surface);
-  color: var(--mat-sys-on-surface);
-
-  // The font can be set by the theme, but a specific family is fine too.
+  background-color: var(--md-sys-color-surface);
+  color: var(--md-sys-color-on-surface);
   font-family: Roboto, 'Helvetica Neue', sans-serif;
   margin: 0;
-
-  // You can keep these for better font rendering
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   color-scheme: light;
@@ -83,8 +23,10 @@ body {
 }
 
 h1 {
+  font-family: 'ABeeZee', sans-serif;
+  font-weight: 400;
+  font-style: normal;
   font-size: 3.125rem;
-  color: var(--gray-900);
   font-weight: 500;
   line-height: 100%;
   letter-spacing: -0.125rem;
@@ -93,7 +35,6 @@ h1 {
 
 p {
   margin: 0;
-  color: var(--gray-700);
 }
 
 .main {
@@ -109,7 +50,6 @@ p {
 
 .app-container {
   display: flex;
-  justify-content: space-around;
   width: 100%;
   max-width: 700px;
   margin-bottom: 3rem;
@@ -117,5 +57,89 @@ p {
   @media screen and (max-width: 650px) {
     flex-direction: column;
     width: max-content;
+  }
+}
+
+.abeezee-regular {
+  font-family: 'ABeeZee', sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+.abeezee-regular-italic {
+  font-family: 'ABeeZee', sans-serif;
+  font-weight: 400;
+  font-style: italic;
+}
+
+/*
+============================================
+  Global Button Styles
+============================================
+*/
+// --- Base styles for ALL Material buttons ---
+// This ensures consistent sizing, font, and icon alignment.
+.mat-mdc-button-base {
+  // Use a modern, fully rounded shape for all buttons.
+  border-radius: 24px !important;
+  height: 48px !important; // A comfortable, tappable height.
+
+  // Ensure icon and text are perfectly aligned on one line.
+  .mdc-button__label,
+  .mat-mdc-button-persistent-ripple {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px; // Adds a nice space between the icon and text.
+  }
+
+  // Set a sensible default font style.
+  .mdc-button__label {
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+  }
+}
+
+// --- Styles for RAISED buttons ---
+// These are the primary "call to action" buttons with a solid background.
+// Default raised button (without a color attribute)
+.mat-mdc-raised-button {
+  // Use a slightly elevated surface color to make it pop from the background.
+  background-color: var(--md-sys-color-surface-container-high);
+  color: var(--md-sys-color-on-surface);
+}
+
+// Primary raised button: <button mat-raised-button color="primary">
+.mat-mdc-raised-button.mat-primary {
+  background-color: var(--md-sys-color-primary);
+  color: var(
+    --md-sys-color-on-primary
+  ); // Text color is designed to contrast with the primary color.
+}
+
+// Accent/Secondary raised button: <button mat-raised-button color="accent">
+.mat-mdc-raised-button.mat-accent {
+  background-color: var(--md-sys-color-secondary);
+  color: var(--md-sys-color-on-secondary);
+}
+
+// --- Styles for STROKED buttons ---
+// These are the outlined, secondary action buttons.
+.mat-mdc-stroked-button {
+  // Use the theme's outline color for the border.
+  border-color: var(--md-sys-color-outline);
+  // Use the primary color for the text to give it emphasis.
+  color: var(--md-sys-color-primary);
+}
+
+// --- Styles for ICON buttons ---
+// These are the circular buttons containing only an icon.
+.mat-mdc-icon-button {
+  // Use a more subtle color that still stands out on the surface.
+  color: var(--md-sys-color-on-surface-variant);
+  background-color: var(--md-sys-color-surface-tint);
+
+  // When used with a primary color, it will adopt that color automatically.
+  &.mat-primary {
+    color: var(--md-sys-color-primary);
   }
 }

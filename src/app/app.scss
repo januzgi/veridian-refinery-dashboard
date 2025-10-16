@@ -3,6 +3,10 @@
   height: 100vh; // Example from your tutorial to fill the screen
 }
 
+.toolbar-spacer {
+  flex: 1 1 auto;
+}
+
 // mat-sidenav {
 //   // Styles for the side navigation bar itself
 // }
