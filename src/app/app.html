@@ -6,9 +6,14 @@
     </mat-sidenav>
     <mat-sidenav-content>
       <mat-toolbar color="primary">
-        <h2>Veridian Refinery Dashboard</h2>
+        <h2 class="abeezee-regular">Veridian Refinery Dashboard</h2>
       </mat-toolbar>
-      <button mat-icon-button (click)="toggleTheme()" aria-label="Toggle theme">
+      <button
+        class="abeezee-regular"
+        mat-icon-button
+        (click)="toggleTheme()"
+        aria-label="Toggle theme"
+      >
         <mat-icon>brightness_6</mat-icon> Toggle theme
       </button>
       <router-outlet></router-outlet>

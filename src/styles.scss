@@ -37,34 +37,27 @@ $veridian-dark-theme: mat.define-theme(
   @include mat.all-component-colors($veridian-dark-theme);
 }
 
-body {
-  font-family: Roboto, 'Helvetica Neue', sans-serif;
-  margin: 0;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  box-sizing: border-box;
-}
-
 html,
 body {
   height: 100%;
 }
 
 body {
+  font-family: Roboto, 'Helvetica Neue', sans-serif;
+  margin: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  box-sizing: border-box;
+
   .mat-toolbar h2 {
-    font-family: 'ABeeZee', sans-serif;
-    font-weight: 400;
-    font-style: normal;
     font-weight: 500;
     line-height: 100%;
     letter-spacing: -0.125rem;
     margin: 0;
   }
-
   p {
     margin: 0;
   }
-
   .main {
     width: 100%;
     min-height: 100%;
@@ -74,8 +67,8 @@ body {
     padding: 1rem;
     box-sizing: inherit;
     position: relative;
+    background-color: var(--mat-sidenav-content-background-color);
   }
-
   .app-container {
     display: flex;
     width: 100%;
@@ -86,7 +79,6 @@ body {
       width: max-content;
     }
   }
-
   .abeezee-regular {
     font-family: 'ABeeZee', sans-serif;
     font-weight: 400;
@@ -97,78 +89,4 @@ body {
     font-weight: 400;
     font-style: italic;
   }
-
-  //   /*
-  // ============================================
-  //   Global Button Styles
-  // ============================================
-  // */
-  //   // --- Base styles for ALL Material buttons ---
-  //   // This ensures consistent sizing, font, and icon alignment.
-  //   .mat-mdc-button-base {
-  //     // Use a modern, fully rounded shape for all buttons.
-  //     border-radius: 24px !important;
-  //     height: 48px !important; // A comfortable, tappable height.
-
-  //     // Ensure icon and text are perfectly aligned on one line.
-  //     .mdc-button__label,
-  //     .mat-mdc-button-persistent-ripple {
-  //       display: inline-flex;
-  //       align-items: center;
-  //       gap: 8px; // Adds a nice space between the icon and text.
-  //     }
-
-  //     // Set a sensible default font style.
-  //     .mdc-button__label {
-  //       font-size: 14px;
-  //       font-weight: 600;
-  //       letter-spacing: 0.5px;
-  //     }
-  //   }
-
-  //   // --- Styles for RAISED buttons ---
-  //   // These are the primary "call to action" buttons with a solid background.
-  //   // Default raised button (without a color attribute)
-  //   .mat-mdc-raised-button {
-  //     // Use a slightly elevated surface color to make it pop from the background.
-  //     background-color: var(--md-sys-color-surface-container-high);
-  //     color: var(--md-sys-color-on-surface);
-  //   }
-
-  //   // Primary raised button: <button mat-raised-button color="primary">
-  //   .mat-mdc-raised-button.mat-primary {
-  //     background-color: var(--md-sys-color-primary);
-  //     color: var(
-  //       --md-sys-color-on-primary
-  //     ); // Text color is designed to contrast with the primary color.
-  //   }
-
-  //   // Accent/Secondary raised button: <button mat-raised-button color="accent">
-  //   .mat-mdc-raised-button.mat-accent {
-  //     background-color: var(--md-sys-color-secondary);
-  //     color: var(--md-sys-color-on-secondary);
-  //   }
-
-  //   // --- Styles for STROKED buttons ---
-  //   // These are the outlined, secondary action buttons.
-  //   .mat-mdc-stroked-button {
-  //     // Use the theme's outline color for the border.
-  //     border-color: var(--md-sys-color-outline);
-  //     // Use the primary color for the text to give it emphasis.
-  //     color: var(--md-sys-color-primary);
-  //   }
-
-  //   // --- Styles for ICON buttons ---
-  //   // These are the circular buttons containing only an icon.
-  //   .mat-mdc-icon-button {
-  //     display: flex;
-  //     color: var(--md-sys-color-on-surface-variant);
-  //     background-color: var(--md-sys-color-surface);
-  //     font-family: 'A';
-
-  //     // When used with a primary color, it will adopt that color automatically.
-  //     &.mat-primary {
-  //       color: var(--md-sys-color-primary);
-  //     }
-  //   }
 }
