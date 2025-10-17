@@ -22,124 +22,229 @@ body {
   height: 100%;
 }
 
-h1 {
-  font-family: 'ABeeZee', sans-serif;
-  font-weight: 400;
-  font-style: normal;
-  font-size: 3.125rem;
-  font-weight: 500;
-  line-height: 100%;
-  letter-spacing: -0.125rem;
-  margin: 0;
-}
-
-p {
-  margin: 0;
-}
-
-.main {
-  width: 100%;
-  min-height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 1rem;
-  box-sizing: inherit;
-  position: relative;
-}
-
-.app-container {
-  display: flex;
-  width: 100%;
-  max-width: 700px;
-  margin-bottom: 3rem;
-
-  @media screen and (max-width: 650px) {
-    flex-direction: column;
-    width: max-content;
+body {
+  .mat-toolbar h2 {
+    font-family: 'ABeeZee', sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 100%;
+    letter-spacing: -0.125rem;
+    margin: 0;
   }
-}
 
-.abeezee-regular {
-  font-family: 'ABeeZee', sans-serif;
-  font-weight: 400;
-  font-style: normal;
-}
-.abeezee-regular-italic {
-  font-family: 'ABeeZee', sans-serif;
-  font-weight: 400;
-  font-style: italic;
-}
+  p {
+    margin: 0;
+  }
 
-/*
-============================================
-  Global Button Styles
-============================================
-*/
-// --- Base styles for ALL Material buttons ---
-// This ensures consistent sizing, font, and icon alignment.
-.mat-mdc-button-base {
-  // Use a modern, fully rounded shape for all buttons.
-  border-radius: 24px !important;
-  height: 48px !important; // A comfortable, tappable height.
-
-  // Ensure icon and text are perfectly aligned on one line.
-  .mdc-button__label,
-  .mat-mdc-button-persistent-ripple {
-    display: inline-flex;
+  .main {
+    width: 100%;
+    min-height: 100%;
+    display: flex;
+    justify-content: center;
     align-items: center;
-    gap: 8px; // Adds a nice space between the icon and text.
+    padding: 1rem;
+    box-sizing: inherit;
+    position: relative;
   }
 
-  // Set a sensible default font style.
-  .mdc-button__label {
-    font-size: 14px;
-    font-weight: 600;
-    letter-spacing: 0.5px;
+  .app-container {
+    display: flex;
+    width: 100%;
+    margin-bottom: 3rem;
+
+    @media screen and (max-width: 650px) {
+      flex-direction: column;
+      width: max-content;
+    }
   }
-}
 
-// --- Styles for RAISED buttons ---
-// These are the primary "call to action" buttons with a solid background.
-// Default raised button (without a color attribute)
-.mat-mdc-raised-button {
-  // Use a slightly elevated surface color to make it pop from the background.
-  background-color: var(--md-sys-color-surface-container-high);
-  color: var(--md-sys-color-on-surface);
-}
-
-// Primary raised button: <button mat-raised-button color="primary">
-.mat-mdc-raised-button.mat-primary {
-  background-color: var(--md-sys-color-primary);
-  color: var(
-    --md-sys-color-on-primary
-  ); // Text color is designed to contrast with the primary color.
-}
-
-// Accent/Secondary raised button: <button mat-raised-button color="accent">
-.mat-mdc-raised-button.mat-accent {
-  background-color: var(--md-sys-color-secondary);
-  color: var(--md-sys-color-on-secondary);
-}
-
-// --- Styles for STROKED buttons ---
-// These are the outlined, secondary action buttons.
-.mat-mdc-stroked-button {
-  // Use the theme's outline color for the border.
-  border-color: var(--md-sys-color-outline);
-  // Use the primary color for the text to give it emphasis.
-  color: var(--md-sys-color-primary);
-}
-
-// --- Styles for ICON buttons ---
-// These are the circular buttons containing only an icon.
-.mat-mdc-icon-button {
-  // Use a more subtle color that still stands out on the surface.
-  color: var(--md-sys-color-on-surface-variant);
-  background-color: var(--md-sys-color-surface-tint);
-
-  // When used with a primary color, it will adopt that color automatically.
-  &.mat-primary {
-    color: var(--md-sys-color-primary);
+  .abeezee-regular {
+    font-family: 'ABeeZee', sans-serif;
+    font-weight: 400;
+    font-style: normal;
   }
+  .abeezee-regular-italic {
+    font-family: 'ABeeZee', sans-serif;
+    font-weight: 400;
+    font-style: italic;
+  }
+
+  //   /*
+  // ============================================
+  //   Global Button Styles
+  // ============================================
+  // */
+  //   // --- Base styles for ALL Material buttons ---
+  //   // This ensures consistent sizing, font, and icon alignment.
+  //   .mat-mdc-button-base {
+  //     // Use a modern, fully rounded shape for all buttons.
+  //     border-radius: 24px !important;
+  //     height: 48px !important; // A comfortable, tappable height.
+
+  //     // Ensure icon and text are perfectly aligned on one line.
+  //     .mdc-button__label,
+  //     .mat-mdc-button-persistent-ripple {
+  //       display: inline-flex;
+  //       align-items: center;
+  //       gap: 8px; // Adds a nice space between the icon and text.
+  //     }
+
+  //     // Set a sensible default font style.
+  //     .mdc-button__label {
+  //       font-size: 14px;
+  //       font-weight: 600;
+  //       letter-spacing: 0.5px;
+  //     }
+  //   }
+
+  //   // --- Styles for RAISED buttons ---
+  //   // These are the primary "call to action" buttons with a solid background.
+  //   // Default raised button (without a color attribute)
+  //   .mat-mdc-raised-button {
+  //     // Use a slightly elevated surface color to make it pop from the background.
+  //     background-color: var(--md-sys-color-surface-container-high);
+  //     color: var(--md-sys-color-on-surface);
+  //   }
+
+  //   // Primary raised button: <button mat-raised-button color="primary">
+  //   .mat-mdc-raised-button.mat-primary {
+  //     background-color: var(--md-sys-color-primary);
+  //     color: var(
+  //       --md-sys-color-on-primary
+  //     ); // Text color is designed to contrast with the primary color.
+  //   }
+
+  //   // Accent/Secondary raised button: <button mat-raised-button color="accent">
+  //   .mat-mdc-raised-button.mat-accent {
+  //     background-color: var(--md-sys-color-secondary);
+  //     color: var(--md-sys-color-on-secondary);
+  //   }
+
+  //   // --- Styles for STROKED buttons ---
+  //   // These are the outlined, secondary action buttons.
+  //   .mat-mdc-stroked-button {
+  //     // Use the theme's outline color for the border.
+  //     border-color: var(--md-sys-color-outline);
+  //     // Use the primary color for the text to give it emphasis.
+  //     color: var(--md-sys-color-primary);
+  //   }
+
+  //   // --- Styles for ICON buttons ---
+  //   // These are the circular buttons containing only an icon.
+  //   .mat-mdc-icon-button {
+  //     display: flex;
+  //     color: var(--md-sys-color-on-surface-variant);
+  //     background-color: var(--md-sys-color-surface);
+  //     font-family: 'A';
+
+  //     // When used with a primary color, it will adopt that color automatically.
+  //     &.mat-primary {
+  //       color: var(--md-sys-color-primary);
+  //     }
+  //   }
 }
+
+// .light {
+//   --md-sys-color-primary: rgb(0 70 56);
+//   --md-sys-color-surface-tint: rgb(23 106 87);
+//   --md-sys-color-on-primary: rgb(255 255 255);
+//   --md-sys-color-primary-container: rgb(2 96 77);
+//   --md-sys-color-on-primary-container: rgb(140 216 192);
+//   --md-sys-color-secondary: rgb(0 110 45);
+//   --md-sys-color-on-secondary: rgb(255 255 255);
+//   --md-sys-color-secondary-container: rgb(95 186 111);
+//   --md-sys-color-on-secondary-container: rgb(0 71 26);
+//   --md-sys-color-tertiary: rgb(63 100 106);
+//   --md-sys-color-on-tertiary: rgb(255 255 255);
+//   --md-sys-color-tertiary-container: rgb(171 210 216);
+//   --md-sys-color-on-tertiary-container: rgb(54 91 97);
+//   --md-sys-color-error: rgb(186 26 26);
+//   --md-sys-color-on-error: rgb(255 255 255);
+//   --md-sys-color-error-container: rgb(255 218 214);
+//   --md-sys-color-on-error-container: rgb(147 0 10);
+//   --md-sys-color-background: rgb(247 250 247);
+//   --md-sys-color-on-background: rgb(24 28 27);
+//   --md-sys-color-surface: rgb(253 248 247);
+//   --md-sys-color-on-surface: rgb(29 27 27);
+//   --md-sys-color-surface-variant: rgb(225 226 230);
+//   --md-sys-color-on-surface-variant: rgb(69 71 74);
+//   --md-sys-color-outline: rgb(117 119 122);
+//   --md-sys-color-outline-variant: rgb(197 198 202);
+//   --md-sys-color-shadow: rgb(0 0 0);
+//   --md-sys-color-scrim: rgb(0 0 0);
+//   --md-sys-color-inverse-surface: rgb(50 48 47);
+//   --md-sys-color-inverse-on-surface: rgb(245 240 238);
+//   --md-sys-color-inverse-primary: rgb(137 213 189);
+//   --md-sys-color-primary-fixed: rgb(165 242 217);
+//   --md-sys-color-on-primary-fixed: rgb(0 32 24);
+//   --md-sys-color-primary-fixed-dim: rgb(137 213 189);
+//   --md-sys-color-on-primary-fixed-variant: rgb(0 81 64);
+//   --md-sys-color-secondary-fixed: rgb(154 247 165);
+//   --md-sys-color-on-secondary-fixed: rgb(0 33 9);
+//   --md-sys-color-secondary-fixed-dim: rgb(126 218 140);
+//   --md-sys-color-on-secondary-fixed-variant: rgb(0 83 32);
+//   --md-sys-color-tertiary-fixed: rgb(194 234 240);
+//   --md-sys-color-on-tertiary-fixed: rgb(0 31 35);
+//   --md-sys-color-tertiary-fixed-dim: rgb(166 205 211);
+//   --md-sys-color-on-tertiary-fixed-variant: rgb(39 76 82);
+//   --md-sys-color-surface-dim: rgb(222 217 216);
+//   --md-sys-color-surface-bright: rgb(253 248 247);
+//   --md-sys-color-surface-container-lowest: rgb(255 255 255);
+//   --md-sys-color-surface-container-low: rgb(248 242 241);
+//   --md-sys-color-surface-container: rgb(242 237 235);
+//   --md-sys-color-surface-container-high: rgb(236 231 230);
+//   --md-sys-color-surface-container-highest: rgb(230 225 224);
+// }
+
+// .dark {
+//   --md-sys-color-primary: rgb(137 213 189);
+//   --md-sys-color-surface-tint: rgb(137 213 189);
+//   --md-sys-color-on-primary: rgb(0 56 44);
+//   --md-sys-color-primary-container: rgb(2 96 77);
+//   --md-sys-color-on-primary-container: rgb(140 216 192);
+//   --md-sys-color-secondary: rgb(126 218 140);
+//   --md-sys-color-on-secondary: rgb(0 57 20);
+//   --md-sys-color-secondary-container: rgb(95 186 111);
+//   --md-sys-color-on-secondary-container: rgb(0 71 26);
+//   --md-sys-color-tertiary: rgb(199 238 244);
+//   --md-sys-color-on-tertiary: rgb(12 54 59);
+//   --md-sys-color-tertiary-container: rgb(171 210 216);
+//   --md-sys-color-on-tertiary-container: rgb(54 91 97);
+//   --md-sys-color-error: rgb(255 180 171);
+//   --md-sys-color-on-error: rgb(105 0 5);
+//   --md-sys-color-error-container: rgb(147 0 10);
+//   --md-sys-color-on-error-container: rgb(255 218 214);
+//   --md-sys-color-background: rgb(16 20 19);
+//   --md-sys-color-on-background: rgb(224 227 224);
+//   --md-sys-color-surface: rgb(20 19 19);
+//   --md-sys-color-on-surface: rgb(230 225 224);
+//   --md-sys-color-surface-variant: rgb(69 71 74);
+//   --md-sys-color-on-surface-variant: rgb(197 198 202);
+//   --md-sys-color-outline: rgb(143 145 148);
+//   --md-sys-color-outline-variant: rgb(69 71 74);
+//   --md-sys-color-shadow: rgb(0 0 0);
+//   --md-sys-color-scrim: rgb(0 0 0);
+//   --md-sys-color-inverse-surface: rgb(230 225 224);
+//   --md-sys-color-inverse-on-surface: rgb(50 48 47);
+//   --md-sys-color-inverse-primary: rgb(23 106 87);
+//   --md-sys-color-primary-fixed: rgb(165 242 217);
+//   --md-sys-color-on-primary-fixed: rgb(0 32 24);
+//   --md-sys-color-primary-fixed-dim: rgb(137 213 189);
+//   --md-sys-color-on-primary-fixed-variant: rgb(0 81 64);
+//   --md-sys-color-secondary-fixed: rgb(154 247 165);
+//   --md-sys-color-on-secondary-fixed: rgb(0 33 9);
+//   --md-sys-color-secondary-fixed-dim: rgb(126 218 140);
+//   --md-sys-color-on-secondary-fixed-variant: rgb(0 83 32);
+//   --md-sys-color-tertiary-fixed: rgb(194 234 240);
+//   --md-sys-color-on-tertiary-fixed: rgb(0 31 35);
+//   --md-sys-color-tertiary-fixed-dim: rgb(166 205 211);
+//   --md-sys-color-on-tertiary-fixed-variant: rgb(39 76 82);
+//   --md-sys-color-surface-dim: rgb(20 19 19);
+//   --md-sys-color-surface-bright: rgb(59 57 56);
+//   --md-sys-color-surface-container-lowest: rgb(15 14 13);
+//   --md-sys-color-surface-container-low: rgb(29 27 27);
+//   --md-sys-color-surface-container: rgb(33 31 31);
+//   --md-sys-color-surface-container-high: rgb(43 42 41);
+//   --md-sys-color-surface-container-highest: rgb(54 52 52);
+// }

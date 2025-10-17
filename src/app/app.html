@@ -4,16 +4,14 @@
       <h2 class="mat-headline-large">Machines</h2>
       <p class="mat-body-large">Navigation...</p>
     </mat-sidenav>
+
     <mat-sidenav-content>
       <mat-toolbar color="primary">
-        <h1>Veridian Refinery Dashboard</h1>
+        <h2>Veridian Refinery Dashboard</h2>
       </mat-toolbar>
-      <span class="toolbar-spacer"></span>
-
       <button mat-icon-button (click)="toggleTheme()" aria-label="Toggle theme">
         <mat-icon>brightness_6</mat-icon> Toggle theme
       </button>
-
       <router-outlet></router-outlet>
     </mat-sidenav-content>
   </mat-sidenav-container>
