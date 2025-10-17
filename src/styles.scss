@@ -4,13 +4,23 @@
 // Theme created using
 // https://github.com/angular/components/blob/main/src/material/schematics/ng-generate/theme-color/README.md
 
-// :root {
-//   --emerald: #5fba6f;
-//   --smoky-black: #0e0906;
-//   --castleton: #02604d;
-//   --light-blue: #abd2d8;
-//   --seasalt: #f8f7f9;
-// }
+:root {
+  --emerald: #5fba6f;
+  --smoky-black: #0e0906;
+  --castleton: #02604d;
+  --light-blue: #abd2d8;
+  --seasalt: #f8f7f9;
+}
+
+$veridian-typography: mat.define-typography-config(
+  $headline-1: mat.define-typography-level(7rem, 7rem, 300, 'ABeeZee', -0.09375em),
+  $headline-2: mat.define-typography-level(3.75rem, 3.75rem, 300, 'ABeeZee', -0.03125em),
+  $headline-3: mat.define-typography-level(3rem, 3.125rem, 400, 'ABeeZee', 0em),
+  $headline-4: mat.define-typography-level(2.125rem, 2.5rem, 400, 'ABeeZee', 0.015625em),
+  $headline-5: mat.define-typography-level(1.5rem, 2rem, 400, 'ABeeZee', 0em),
+  $headline-6: mat.define-typography-level(1.25rem, 2rem, 500, 'ABeeZee', 0.009375em),
+  $font-family: 'Roboto, sans-serif',
+);
 
 $veridian-light-theme: mat.define-theme(
   (
@@ -19,6 +29,7 @@ $veridian-light-theme: mat.define-theme(
       primary: my-theme.$primary-palette,
       tertiary: my-theme.$tertiary-palette,
     ),
+    typography: $veridian-typography,
   )
 );
 
@@ -29,10 +40,13 @@ $veridian-dark-theme: mat.define-theme(
       primary: my-theme.$primary-palette,
       tertiary: my-theme.$tertiary-palette,
     ),
+    typography: $veridian-typography,
   )
 );
 
-@include mat.all-component-themes($veridian-light-theme);
+.light {
+  @include mat.all-component-colors($veridian-light-theme);
+}
 .dark {
   @include mat.all-component-colors($veridian-dark-theme);
 }
@@ -49,11 +63,16 @@ body {
   -moz-osx-font-smoothing: grayscale;
   box-sizing: border-box;
 
-  .mat-toolbar h2 {
-    font-weight: 500;
-    line-height: 100%;
-    letter-spacing: -0.125rem;
-    margin: 0;
+  // General styling
+  .abeezee-regular {
+    font-family: 'ABeeZee', sans-serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+  .abeezee-regular-italic {
+    font-family: 'ABeeZee', sans-serif;
+    font-weight: 400;
+    font-style: italic;
   }
   p {
     margin: 0;
@@ -79,14 +98,14 @@ body {
       width: max-content;
     }
   }
-  .abeezee-regular {
-    font-family: 'ABeeZee', sans-serif;
-    font-weight: 400;
-    font-style: normal;
+
+  // Specific styling
+  .mat-toolbar h2 {
+    font-weight: 500;
+    margin: 0;
   }
-  .abeezee-regular-italic {
-    font-family: 'ABeeZee', sans-serif;
-    font-weight: 400;
-    font-style: italic;
+
+  button[matButton] {
+    border-radius: 10px;
   }
 }
