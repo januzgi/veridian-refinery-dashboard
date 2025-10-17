@@ -1,0 +1,11 @@
+<div class="dashboard-grid">
+  <mat-card class="machine-card" *ngFor="let machine of machines">
+    <mat-card-header>
+      <mat-card-title>{{ machine.name }}</mat-card-title>
+      <mat-card-subtitle>{{ machine.type }}</mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content>
+      <p>Status: {{ machine.status }}</p>
+    </mat-card-content>
+  </mat-card>
+</div>

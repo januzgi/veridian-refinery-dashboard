@@ -1,6 +1,10 @@
 <main class="main">
   <mat-sidenav-container class="app-container">
     <mat-sidenav mode="side" opened>
+      <button matButton="outlined" (click)="toggleTheme()" aria-label="Toggle theme">
+        <mat-icon>brightness_6</mat-icon>
+        Toggle theme
+      </button>
       <h2 class="mat-headline-large">Machines</h2>
       <p class="mat-body-large">Navigation...</p>
     </mat-sidenav>
@@ -8,13 +12,10 @@
       <mat-toolbar color="primary">
         <h2 class="abeezee-regular">Veridian Refinery Dashboard</h2>
       </mat-toolbar>
-      <button matButton="outlined" (click)="toggleTheme()" aria-label="Toggle theme">
-        <mat-icon>brightness_6</mat-icon>
-        Toggle theme
-      </button>
+
+      <app-dashboard-view></app-dashboard-view>
+
       <router-outlet></router-outlet>
     </mat-sidenav-content>
   </mat-sidenav-container>
 </main>
-
-<router-outlet />

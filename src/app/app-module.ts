@@ -7,9 +7,10 @@ import { AppRoutingModule } from './app-routing-module';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { App } from './app';
+import { DashboardView } from './components/dashboard-view/dashboard-view';
 
 @NgModule({
-  declarations: [App],
+  declarations: [App, DashboardView],
   imports: [
     BrowserModule,
     AppRoutingModule,

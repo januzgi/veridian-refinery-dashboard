@@ -11,17 +11,6 @@
   --light-blue: #abd2d8;
   --seasalt: #f8f7f9;
 }
-
-$veridian-typography: mat.define-typography-config(
-  $headline-1: mat.define-typography-level(7rem, 7rem, 300, 'ABeeZee', -0.09375em),
-  $headline-2: mat.define-typography-level(3.75rem, 3.75rem, 300, 'ABeeZee', -0.03125em),
-  $headline-3: mat.define-typography-level(3rem, 3.125rem, 400, 'ABeeZee', 0em),
-  $headline-4: mat.define-typography-level(2.125rem, 2.5rem, 400, 'ABeeZee', 0.015625em),
-  $headline-5: mat.define-typography-level(1.5rem, 2rem, 400, 'ABeeZee', 0em),
-  $headline-6: mat.define-typography-level(1.25rem, 2rem, 500, 'ABeeZee', 0.009375em),
-  $font-family: 'Roboto, sans-serif',
-);
-
 $veridian-light-theme: mat.define-theme(
   (
     color: (
@@ -29,10 +18,12 @@ $veridian-light-theme: mat.define-theme(
       primary: my-theme.$primary-palette,
       tertiary: my-theme.$tertiary-palette,
     ),
-    typography: $veridian-typography,
+    typography: (
+      brand-family: 'ABeeZee',
+      plain-family: 'Roboto, sans-serif',
+    ),
   )
 );
-
 $veridian-dark-theme: mat.define-theme(
   (
     color: (
@@ -40,15 +31,17 @@ $veridian-dark-theme: mat.define-theme(
       primary: my-theme.$primary-palette,
       tertiary: my-theme.$tertiary-palette,
     ),
-    typography: $veridian-typography,
+    typography: (
+      brand-family: 'ABeeZee',
+      plain-family: 'Roboto, sans-serif',
+    ),
   )
 );
-
 .light {
-  @include mat.all-component-colors($veridian-light-theme);
+  @include mat.all-component-themes($veridian-light-theme);
 }
 .dark {
-  @include mat.all-component-colors($veridian-dark-theme);
+  @include mat.all-component-themes($veridian-dark-theme);
 }
 
 html,
@@ -107,5 +100,17 @@ body {
 
   button[matButton] {
     border-radius: 10px;
+  }
+
+  .dashboard-grid {
+    display: grid;
+    gap: 16px;
+    padding: 24px;
+    // Create a responsive grid that shows as many cards as fit
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+
+    // .machine-card {
+    //   // You can add specific card styles here later
+    // }
   }
 }
