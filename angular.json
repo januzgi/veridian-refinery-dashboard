@@ -34,11 +34,7 @@
                 "input": "public"
               }
             ],
-            "styles": [
-              "src/styles.scss",
-              "src/assets/themes/light.css",
-              "src/assets/themes/dark.css"
-            ]
+            "styles": ["src/styles.scss"]
           },
           "configurations": {
             "production": {
