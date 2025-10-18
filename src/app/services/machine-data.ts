@@ -29,7 +29,7 @@ export class MachineData {
       name: 'Woodchipper XL',
       type: 'Chipper',
       status: 'Warning',
-      powerUsage: 121.0,
+      powerUsage: 21.0,
       waterUsage: 15.5,
     },
     {

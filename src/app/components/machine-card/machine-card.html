@@ -1,0 +1,17 @@
+<a [routerLink]="['/machine', machine.id]">
+  <mat-card
+    class="machine-card"
+    [ngClass]="{
+      'warning-status': machine.status === 'Warning',
+      'power-alert-status': machine.powerUsage > powerAlertThreshold
+    }"
+  >
+    <mat-card-header>
+      <mat-card-title>{{ machine.name }}</mat-card-title>
+      <mat-card-subtitle>{{ machine.type }}</mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content>
+      <p>Status: {{ machine.status }}</p>
+    </mat-card-content>
+  </mat-card>
+</a>

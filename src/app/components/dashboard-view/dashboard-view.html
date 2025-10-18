@@ -1,13 +1,21 @@
+<section class="settings-panel" [formGroup]="settingsForm">
+  <mat-form-field appearance="fill">
+    <mat-label>Power alert threshold (kWh)</mat-label>
+    <input
+      matInput
+      type="number"
+      formControlName="alertThreshold"
+      placeholder="e.g. 100"
+      max="100"
+      min="0"
+    />
+  </mat-form-field>
+</section>
+
 <div class="dashboard-grid">
-  <a *ngFor="let machine of machines$ | async" [routerLink]="['/machine', machine.id]">
-    <mat-card class="machine-card">
-      <mat-card-header>
-        <mat-card-title>{{ machine.name }}</mat-card-title>
-        <mat-card-subtitle>{{ machine.type }}</mat-card-subtitle>
-      </mat-card-header>
-      <mat-card-content>
-        <p>Status: {{ machine.status }}</p>
-      </mat-card-content>
-    </mat-card>
-  </a>
+  <app-machine-card
+    *ngFor="let machine of machines$ | async"
+    [machine]="machine"
+    [powerAlertThreshold]="powerAlertThreshold"
+  ></app-machine-card>
 </div>
