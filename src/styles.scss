@@ -47,6 +47,7 @@ $veridian-dark-theme: mat.define-theme(
 html,
 body {
   height: 100%;
+  background-color: var(--mat-sidenav-content-background-color);
 }
 
 body {
@@ -79,7 +80,6 @@ body {
     padding: 1rem;
     box-sizing: inherit;
     position: relative;
-    background-color: var(--mat-sidenav-content-background-color);
   }
   .app-container {
     display: flex;
@@ -97,11 +97,9 @@ body {
     font-weight: 500;
     margin: 0;
   }
-
   button[matButton] {
     border-radius: 10px;
   }
-
   .dashboard-grid {
     display: grid;
     gap: 16px;
@@ -109,6 +107,10 @@ body {
     // Create a responsive grid that shows as many cards as fit
     grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
 
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
     // .machine-card {
     //   // You can add specific card styles here later
     // }

@@ -1,5 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Machine } from '../models/machine.model';
+import { Observable, interval, of } from 'rxjs';
+import { map } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root',
@@ -50,5 +52,18 @@ export class MachineData {
 
   getMachines(): Machine[] {
     return this.machines;
+  }
+
+  getLiveMachineUpdates(): Observable<Machine[]> {
+    return interval(2000).pipe(
+      map(() => {
+        // Return a new array where each machine has updated, random stats
+        return this.machines.map((m) => ({
+          ...m,
+          powerUsage: parseFloat((Math.random() * 100).toFixed(2)),
+          status: Math.random() > 0.9 ? 'Warning' : 'Online',
+        }));
+      })
+    );
   }
 }

@@ -8,9 +8,10 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { App } from './app';
 import { DashboardView } from './components/dashboard-view/dashboard-view';
+import { MachineDetail } from './pages/machine-detail/machine-detail';
 
 @NgModule({
-  declarations: [App, DashboardView],
+  declarations: [App, DashboardView, MachineDetail],
   imports: [
     BrowserModule,
     AppRoutingModule,
